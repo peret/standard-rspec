@@ -532,6 +532,14 @@ RSpec/ImplicitSubject:
   VersionChanged: '2.13'
   Reference: https://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/ImplicitSubject
 
+RSpec/IncludeExamples:
+  Description: Checks for usage of `include_examples`.
+  Enabled: true
+  SafeAutoCorrect: false
+  VersionAdded: '3.6'
+  VersionChanged: '3.7'
+  Reference: https://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/IncludeExamples
+
 RSpec/IndexedLet:
   Description: Do not set up test data using indexes (e.g., `item_1`, `item_2`).
   Enabled: true
@@ -594,6 +602,12 @@ RSpec/LeakyConstantDeclaration:
   VersionAdded: '1.35'
   StyleGuide: https://rspec.rubystyle.guide/#declare-constants
   Reference: https://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/LeakyConstantDeclaration
+
+RSpec/LeakyLocalVariable:
+  Description: Checks for local variables from outer scopes used inside examples.
+  Enabled: true
+  VersionAdded: '3.8'
+  Reference: https://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/LeakyLocalVariable
 
 RSpec/LetBeforeExamples:
   Description: Checks for `let` definitions that come after an example.
@@ -742,6 +756,14 @@ RSpec/OverwritingSetup:
   Enabled: true
   VersionAdded: '1.14'
   Reference: https://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/OverwritingSetup
+
+RSpec/Output:
+  Description: Checks for the use of output calls like puts and print in specs.
+  Enabled: true
+  AutoCorrect: contextual
+  SafeAutoCorrect: false
+  VersionAdded: '3.9'
+  Reference: https://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/Output
 
 RSpec/Pending:
   Description: Checks for any pending or skipped examples.
@@ -918,7 +940,13 @@ RSpec/SpecFilePathFormat:
   IgnoreMethods: false
   IgnoreMetadata:
     type: routing
+  InflectorPath: "./config/initializers/inflections.rb"
+  SupportedInflectors:
+    - default
+    - active_support
+  EnforcedInflector: default
   VersionAdded: '2.24'
+  VersionChanged: '3.8'
   Reference: https://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/SpecFilePathFormat
 
 RSpec/SpecFilePathSuffix:
