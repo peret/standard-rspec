@@ -388,8 +388,12 @@ RSpec/Eq:
 RSpec/ExampleLength:
   Description: Checks for long examples.
   Enabled: true
-  Max: 5
-  CountAsOne: []
+  Max: 16
+  CountAsOne:
+    - array
+    - hash
+    - method_call
+    - heredoc
   VersionAdded: '1.5'
   VersionChanged: '2.3'
   Reference: https://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/ExampleLength
@@ -686,7 +690,7 @@ RSpec/MultipleDescribes:
 
 RSpec/MultipleExpectations:
   Description: Checks if examples contain too many `expect` calls.
-  Enabled: true
+  Enabled: false
   Max: 1
   VersionAdded: '1.7'
   VersionChanged: '1.21'
@@ -695,7 +699,7 @@ RSpec/MultipleExpectations:
 
 RSpec/MultipleMemoizedHelpers:
   Description: Checks if example groups contain too many `let` and `subject` calls.
-  Enabled: true
+  Enabled: false
   AllowSubject: true
   Max: 5
   VersionAdded: '1.43'
@@ -724,7 +728,7 @@ RSpec/NamedSubject:
 RSpec/NestedGroups:
   Description: Checks for nested example groups.
   Enabled: true
-  Max: 3
+  Max: 4
   AllowedGroups: []
   VersionAdded: '1.7'
   VersionChanged: '2.13'
